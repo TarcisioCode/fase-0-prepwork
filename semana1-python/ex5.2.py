@@ -12,8 +12,9 @@ while True:
         continue
     if num == "done":
         break
-    list_of_numbers.append(num)
-largest = max(list_of_numbers)
-smallest = min(list_of_numbers)
-print("Maximum", largest)
-print("Minimum", smallest)
+    if largest is None or num > largest:
+        largest = num
+    if smallest is None or num < smallest:
+        smallest = num
+print("Maximum is", largest)
+print("Minimus is", smallest)
